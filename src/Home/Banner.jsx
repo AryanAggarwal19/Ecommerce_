@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import productData from "../products.json"
+import SelectedCategory from "../components/SelectedCategory";
 
 const title = <h2>Search Your One From <span>Thousand</span> of Products</h2>;
 const desc = "We have the largest collection of products";
@@ -22,7 +23,7 @@ const bannerList = [
 const Banner = () => {
     const[searchInput, setSearchInput]= useState("");
     const[filteredProducts, setfilteredProducts]= useState(productData);
-    // console.log(productData);
+    //console.log(productData);
 
     //search functionality
     const handleSearch = e => {
@@ -42,8 +43,12 @@ const Banner = () => {
           <div className="banner-content">
             {title}
             <form>
+                <SelectedCategory select={"all"}/>
                 <input type="text" name="search" id="search" placeholder="Search your product" value=
                 {searchInput} onChange={handleSearch}/>
+                <button type="submit">
+                <i className="icofont-search"></i>
+                </button>
             </form>
             <p>{desc}</p>
             <ul className="lab-ul">
