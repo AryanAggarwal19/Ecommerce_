@@ -1,0 +1,11 @@
+@layer base{
+    ul, ol{
+        list-style: revert;
+    }
+}
+.x{
+    list-style: none;
+    display: flex;
+    column-gap: 1.5em;
+    margin:auto;
+}
